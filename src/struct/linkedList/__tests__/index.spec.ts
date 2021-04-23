@@ -1,12 +1,12 @@
 import { IListNode, LinkedList } from '../index'
 
 describe('LinkedList create', () => {
-  let node1: IListNode = {
+  const node1: IListNode = {
     data: 1,
     next: null
   }
 
-  let node2: IListNode = {
+  const node2: IListNode = {
     data:2,
     next: null
   }
