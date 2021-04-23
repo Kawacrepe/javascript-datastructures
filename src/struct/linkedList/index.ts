@@ -2,7 +2,6 @@ interface IListNode {
   data: unknown,
   next: IListNode
 }
-
 class LinkedList {
   head: IListNode[]
 

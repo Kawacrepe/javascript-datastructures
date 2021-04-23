@@ -9,6 +9,6 @@
     "src/**/*"
   ],
   "exclude": [
-    "src/examples/**/*"
+    "src/struct/**/__tests__/*"
   ]
 }
