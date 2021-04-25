@@ -9,21 +9,32 @@
     "lint": "eslint . --ext .ts",
     "lint:fix": "eslint --fix . --ext .ts",
     "build": "rimraf dist/ && tsc",
-    "dev": "ts-node src/index.ts",
-    "example": "ts-node src/examples/index.ts"
+    "dev": "ts-node src/index.ts"
   },
   "keywords": [],
   "author": "Vincent Dhennin",
   "files": [
     "/dist"
   ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
+  },
   "license": "ISC",
   "devDependencies": {
     "@types/jest": "^26.0.22",
     "@typescript-eslint/eslint-plugin": "^4.22.0",
     "@typescript-eslint/parser": "^4.22.0",
     "eslint": "^7.24.0",
+    "eslint-config-prettier": "^8.3.0",
+    "husky": "^6.0.0",
     "jest": "^26.6.3",
+    "lint-staged": "^10.5.4",
+    "prettier": "2.2.1",
     "rimraf": "^3.0.2",
     "ts-jest": "^26.5.5",
     "ts-node": "^9.1.1",

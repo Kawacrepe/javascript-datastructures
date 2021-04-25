@@ -2,14 +2,13 @@
   "root": true,
   "parser": "@typescript-eslint/parser",
   "rules": {
-    "semi": [2, "always", { "omitLastInOneLineBlock": true}]
+    "semi": [2, "always", { "omitLastInOneLineBlock": true }]
   },
-  "plugins": [
-    "@typescript-eslint"
-  ],
+  "plugins": ["@typescript-eslint"],
   "extends": [
     "eslint:recommended",
     "plugin:@typescript-eslint/eslint-recommended",
-    "plugin:@typescript-eslint/recommended"
+    "plugin:@typescript-eslint/recommended",
+    "prettier"
   ]
 }
