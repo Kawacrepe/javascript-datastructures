@@ -1,3 +1,3 @@
-import * as struct from './struct'
+import * as struct from './struct';
 
-export { struct }
+export { struct };
