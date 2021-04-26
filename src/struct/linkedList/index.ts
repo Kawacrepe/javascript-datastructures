@@ -3,9 +3,23 @@ interface IListNode {
   next: IListNode;
 }
 
-function getSize() {
+interface ILinkedList {
+  head: IListNode;
+}
+
+function linkedList(node = null): ILinkedList {
+  const linkedList: ILinkedList = Object.create({
+    head: null,
+  });
+  if (typeof node === "object") {
+    linkedList.head = node;
+  }
+  return linkedList;
+}
+
+function getSize(linkedList: ILinkedList): number {
   let count = 0;
-  let node = this.head;
+  let node = linkedList.head;
   while (node) {
     count++;
     node = node.next;
@@ -13,23 +27,39 @@ function getSize() {
   return count;
 }
 
-function clear(): void {
-  this.head = null;
-}
-
-function getLast() {
-  let lastNode = this.head;
-  if (!lastNode) {
-    return null;
+function addNode(linkedList: ILinkedList, node: IListNode): void {
+  if (!linkedList || !linkedList.head) {
+    return;
   }
-  while (lastNode.next) {
-    lastNode = lastNode.next;
+
+  let currNode = linkedList.head;
+
+  while (node) {
+    if (!currNode.next) {
+      currNode.next = node;
+      break;
+    }
+    currNode = currNode.next;
   }
-  return lastNode;
 }
 
-function getFirst() {
-  return this.head;
-}
+// function clear(): void {
+//   this.head = null;
+// }
 
-export { IListNode };
+// function getLast() {
+//   let lastNode = this.head;
+//   if (!lastNode) {
+//     return null;
+//   }
+//   while (lastNode.next) {
+//     lastNode = lastNode.next;
+//   }
+//   return lastNode;
+// }
+
+// function getFirst() {
+//   return this.head;
+// }
+
+export { IListNode, ILinkedList, linkedList, getSize, addNode };

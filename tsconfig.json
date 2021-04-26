@@ -1,14 +1,10 @@
 {
   "compilerOptions": {
     "module": "commonjs",
-    "target": "es2015",
+    "target": "esnext",
     "declaration": true,
     "outDir": "./dist"
   },
-  "include": [
-    "src/**/*"
-  ],
-  "exclude": [
-    "src/struct/**/__tests__/*"
-  ]
+  "include": ["src/**/*"],
+  "exclude": ["src/struct/**/__tests__/*"]
 }
