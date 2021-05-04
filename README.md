@@ -1,7 +1,7 @@
 # Javascript datastructures
 
 
-# Why did I realize this repository
+# Why 
 
 I wanted to study differents algorithms and how they can be implemented in javascript (because we love javascript), then I encountered a problem.
 
