@@ -43,23 +43,27 @@ function addNode(linkedList: ILinkedList, node: IListNode): void {
   }
 }
 
-// function clear(): void {
-//   this.head = null;
-// }
+function getLast(linkedList: ILinkedList): IListNode {
+  let lastNode = linkedList.head;
+  if (!lastNode) {
+    return null;
+  }
+  while (lastNode.next) {
+    lastNode = lastNode.next;
+  }
+  return lastNode;
+}
 
-// function getLast() {
-//   let lastNode = this.head;
-//   if (!lastNode) {
-//     return null;
-//   }
-//   while (lastNode.next) {
-//     lastNode = lastNode.next;
-//   }
-//   return lastNode;
-// }
+function getFirst(linkedList: ILinkedList): IListNode {
+  return linkedList.head;
+}
 
-// function getFirst() {
-//   return this.head;
-// }
-
-export { IListNode, ILinkedList, linkedList, getSize, addNode };
+export {
+  IListNode,
+  ILinkedList,
+  linkedList,
+  getSize,
+  addNode,
+  getFirst,
+  getLast,
+};
